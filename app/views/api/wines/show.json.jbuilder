@@ -1,0 +1,1 @@
+json.partial! @wine, partial: 'wine', as: :wine
