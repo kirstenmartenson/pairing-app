@@ -7,7 +7,7 @@ class Api::WinesController < ApplicationController
   def create
     @wine = Wine.new(
       name: params[:name],
-      price: params[:price],
+      category: params[:category],
       description: params[:description],
       image_url: params[:image_url]
     )
@@ -28,7 +28,7 @@ class Api::WinesController < ApplicationController
     @wine = Wine.find(params[:id])
 
     @wine.name = params[:name] || @wine.name
-    @wine.price = params[:price] || @wine.price
+    @wine.category = params[:category] || @wine.category
     @wine.description = params[:description] || @wine.description
     @wine.image_url = params[:image_url] || @wine.image_url
 

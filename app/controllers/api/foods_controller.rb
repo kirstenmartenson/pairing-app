@@ -1,5 +1,5 @@
 class Api::FoodsController < ApplicationController
-    def index
+  def index
     @foods = Food.all
     render 'index.json.jbuilder'
   end
@@ -7,9 +7,7 @@ class Api::FoodsController < ApplicationController
   def create
     @food = Food.new(
       name: params[:name],
-      price: params[:price],
-      description: params[:description],
-      image_url: params[:image_url]
+      category: params[:category]
     )
 
     if @food.save
@@ -28,9 +26,7 @@ class Api::FoodsController < ApplicationController
     @food = Food.find(params[:id])
 
     @food.name = params[:name] || @food.name
-    @food.price = params[:price] || @food.price
-    @food.description = params[:description] || @food.description
-    @food.image_url = params[:image_url] || @food.image_url
+    @food.category = params[:category] || @food.category
 
     if @food.save
       render 'show.json.jbuilder'
