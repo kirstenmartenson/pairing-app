@@ -1,2 +1,9 @@
-json.food_id pairing.food_id
-json.wine_id pairing.wine_id
+json.id pairing.id
+
+json.food do
+  json.partial! pairing.food, partial: "api/foods/food", as: :food
+end
+
+json.wine do
+  json.partial! pairing.wine, partial: "api/wines/wine", as: :wine
+end

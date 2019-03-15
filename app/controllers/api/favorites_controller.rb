@@ -1,9 +1,9 @@
 class Api::FavoritesController < ApplicationController
 
-before_action :authenticate_user
+  before_action :authenticate_user
 
   def create
-    @favorites = Favorite.new(
+    @favorite = Favorite.new(
       user_id: current_user.id,
       pairing_id: params[:pairing_id]
     )
@@ -11,6 +11,7 @@ before_action :authenticate_user
     if @favorite.save #happy path
       render 'show.json.jbuilder'
     else #sad path
+      p @favorite.errors.full_messages
       render json: {errors: @favorite.errors.full_messages}, status: :unprocessable_entity
     end
   end

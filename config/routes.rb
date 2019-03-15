@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   #USERS
     get "/users" => "users#index"
     post "/users" => "users#create"
-    get "/users/:id" => "users#show"
+    get "/users/me" => "users#show"
+
+    #SESSIONS
+    post "/sessions" => "sessions#create"
 
   #WINES
     get '/wines' => 'wines#index'
@@ -17,6 +20,7 @@ Rails.application.routes.draw do
     get '/foods/:id' => 'foods#show'
 
   #PAIRING
+    post '/pairings' => 'pairings#create'
     get '/pairings' => 'pairings#index'
 
   #FAVORITES

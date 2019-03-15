@@ -2,5 +2,6 @@ class Favorite < ApplicationRecord
   belongs_to :user
   belongs_to :pairing
 
-  validates_uniqueness_of :user_id
+#Validates unique combination
+  validates :user_id, uniqueness: {scope: :pairing_id}
 end

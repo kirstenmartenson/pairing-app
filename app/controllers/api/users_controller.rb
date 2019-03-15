@@ -15,19 +15,19 @@ class Api::UsersController < ApplicationController
     )
 
     if user.save
-      render 'show.json.jbuilder'
+      render json: {message: 'User created successfully'}, status: :created
     else
       render json: {errors: user.errors.full_messages}, status: :bad_request
     end
   end
 
   def show
-    @user = User.find_by(id: params[:id])
+    @user = current_user
     render 'show.json.jbuilder'
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = current_user
 
     @user.name = params[:name] || @user.name
     @user.email = params[:email] || @user.email
@@ -42,7 +42,7 @@ class Api::UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find_by(id: params[:id])
+    @user = current_user
     @user.destroy
     render json: {message: "Account successfully deleted."}
   end

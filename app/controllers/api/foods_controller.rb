@@ -18,7 +18,7 @@ class Api::FoodsController < ApplicationController
   end
 
   def show
-    @food = Rood.find(params[:id])
+    @food = Food.find(params[:id])
     render 'show.json.jbuilder'
   end
 
