@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   namespace :api do
 
   #USERS
-    get "/users" => "users#index"
-    post "/users" => "users#create"
     get "/users/me" => "users#show"
+    post "/users" => "users#create"
+    patch "/users/me" => "users#update"
+    delete "/users/me" => "users#destroy"
 
-    #SESSIONS
+  #SESSIONS
     post "/sessions" => "sessions#create"
 
   #WINES

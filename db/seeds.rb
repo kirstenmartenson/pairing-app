@@ -170,10 +170,68 @@ Wine.create!([
 
 
 Food.create!([
-  {name: "NY Strip", category: "Meats"},
-  {name: "Grilled Salmon", category: "Fish"},
+
+  #MEATS
+  {name: "New York Strip", category: "Meats"},
+  {name: "Bone-In Rib-eye", category: "Meats"},
   {name: "Roast Chicken", category: "Meats"},
-])
+  {name: "Rack of Lamb", category: "Meats"},
+  {name: "Baby Back Ribs ", category: "Meats"},
+  {name: "Braised Beef Short Ribs", category: "Meats"},
+  {name: "Veal Osso Buco", category: "Meats"},
+  {name: "Grilled Pork Chops", category: "Meats"},
+  {name: "Roast Chicken", category: "Meats"},
+
+  #PASTA
+  {name: "Chicken Vesuvio", category: "Pasta"},
+  {name: "Chicken Parmesan", category: "Pasta"},
+  {name: "Fettuccine Alfredo", category: "Pasta"},
+  {name: "Four-Cheese Ravioli", category: "Pasta"},
+  {name: "Spaghetti & Meatballs", category: "Pasta"},
+  {name: "Baked Ziti", category: "Pasta"},
+  {name: "Dani's Eggplant Parmesan", category: "Pasta"},
+  {name: "Chicken Parmesan", category: "Pasta"},
+  {name: "Linguine & Clams", category: "Pasta"},
+
+  
+
+  #SEAFOOD
+  {name: "Grilled Salmon", category: "Seafood"},
+  {name: "Grilled Sea Scallops", category: "Seafood"},
+  {name: "Shrimp Scampi", category: "Seafood"},
+  {name: "Lump Crab Cakes", category: "Seafood"},
+  {name: "Cedar Plank Roasted Salmon", category: "Seafood"},
+  {name: "Chilean Sea Bass", category: "Seafood"},
+  {name: "Seared Scallops", category: "Seafood"},
+  {name: "Seared Scallops", category: "Seafood"},
+
+
+  #APPETIZERS
+  {name: "Bruschetta", category: "Appetizers"},
+  {name: "Buffalo Wings", category: "Appetizers"},
+  {name: "Nachos", category: "Appetizers"},  
+  {name: "Ahi Tuna Tartare", category: "Appetizers"},
+  {name: "Mozzarella Cheese Sticks", category: "Appetizers"},
+  {name: "Fried Calamari", category: "Appetizers"},
+  {name: "Shrimp Cocktail", category: "Appetizers"},
+  {name: "Hummus", category: "Appetizers"},
+
+  #SALADS
+  {name: "Caesar Salad", category: "Salads"}
+  {name: "Spinach Salad*", category: "Salads"}
+  {name: "Iceberg Wedge", category: "Salads"}
+  {name: "Chopped Cobb", category: "Salads"}
+
+  #SOUPS
+  {name: "Baked French Onion", category: "Soups"}
+  {name: "Chicken Tortilla", category: "Soups"}
+  {name: "Tomato Basil", category: "Soups"}
+  {name: "Lobster Bisque", category: "Soups"}
+  {name: "Loaded Baked Potato", category: "Soups"}
+  {name: "New England Clam Chowder", category: "Soups"}
+
+
+  # Categories: Appetizers, soups, saldas, meats, seafoods, desserts
 
 Pairing.create!([
   {food_id: 1, wine_id: 1},

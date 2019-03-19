@@ -1,10 +1,5 @@
 class Api::UsersController < ApplicationController
-
-  def index
-    @users = User.all
-    render 'index.json.jbuilder'
-  end
-
+  before_action :authenticate_user, except: [:create]
 
   def create
     user = User.new(
@@ -13,7 +8,6 @@ class Api::UsersController < ApplicationController
       password: params[:password],
       password_confirmation: params[:password_confirmation]
     )
-
     if user.save
       render json: {message: 'User created successfully'}, status: :created
     else
@@ -28,11 +22,9 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = current_user
-
     @user.name = params[:name] || @user.name
     @user.email = params[:email] || @user.email
-    @user.password = params[:password] || @user.password_digest
-    @user.password_confirmation = params[:password_confirmation] || @user.password_digest
+
 
     if @user.save
       render 'show.json.jbuilder'
