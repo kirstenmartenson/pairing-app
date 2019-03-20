@@ -2,8 +2,14 @@ class Api::FavoritesController < ApplicationController
 
   before_action :authenticate_user
 
+  def index
+    @favorites = Favorite.all
+    render 'index.json.jbuilder'
+  end
+
   def create
     @favorite = Favorite.new(
+      # user_id: current_user.id,
       user_id: current_user.id,
       pairing_id: params[:pairing_id]
     )

@@ -24,6 +24,8 @@ class Api::UsersController < ApplicationController
     @user = current_user
     @user.name = params[:name] || @user.name
     @user.email = params[:email] || @user.email
+    @user.password = params[:password] || @user.password_digest
+
 
 
     if @user.save
